@@ -1,0 +1,58 @@
+pm.test("firstname", () => {
+  const jsonData = pm.response.json();
+  pm.expect(jsonData.firstname)== ("Jim");
+console.log("validate response");
+});
+--------------------------------
+
+{
+    "firstname" : "{{firstname}}",
+    "lastname" : "{{lastname}}",
+    "totalprice" : "{{totalprice}}",
+    "depositpaid" : "{{depositpaid}}",
+    "bookingdates" : {
+        "checkin" : "{{checkin}}",
+        "checkout" : "{{checkout}}"
+    },
+    "additionalneeds" : "{{additionalneeds}}"
+}
+
+
+------------------
+pm.test("Status code is 201", () => {
+  pm.response.to.have.status(201);
+});
+
+pm.test("Successful POST request", () => {
+  pm.expect(pm.response.code).to.be.oneOf([201,202]);
+});
+
+pm.test("Status code name has string", () => {
+  pm.response.to.have.status("Created");
+});
+-------------
+pm.test("Person is Jane", () => {
+  const responseJson = pm.response.json();
+  pm.expect(responseJson.form.name).to.eql("Jane");
+  pm.expect(responseJson.form.age).to.eql(23);
+});
+-----------------
+pm.test("Content-Type header is present",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+newman run "C:\Users\Plabani\Downloads\chk\IBM_05.postman_collection.json" -e "C:\Users\Plabani\Downloads\chk\Plabani.postman_environment.json"

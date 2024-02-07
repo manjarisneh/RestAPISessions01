@@ -1,0 +1,28 @@
+[
+    {
+        "id": 6079169,
+        "name": "Agasti Gandhi",
+        "email": "gandhi_agasti@crist.example",
+        "gender": "male",
+        "status": "inactive"
+    },
+
+
+
+	{
+        "id": 6079291,
+        "name": "Hanuman Gandhi",
+        "email": "Hanuman_agasti@crist.example",
+        "gender": "male",
+        "status": "inactive"
+    	},
+
+	{
+        "id": 6079281,
+        "name": "Maruthi Gandhi",
+        "email": "Maruthi_agasti@crist.example",
+        "gender": "male",
+        "status": "active"
+    	}
+
+]

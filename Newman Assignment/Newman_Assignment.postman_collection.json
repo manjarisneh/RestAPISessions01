@@ -1,0 +1,278 @@
+{
+	"info": {
+		"_postman_id": "acfba867-dc03-4ddc-8eec-5fdccab03342",
+		"name": "Newman_Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9279367"
+	},
+	"item": [
+		{
+			"name": "https://fakerestapi.azurewebsites.net/api/v1/Activities",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/ecmascript",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEURI}}/api/v1/Activities/8",
+					"host": [
+						"{{BASEURI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Activities",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASEURI}}/api/v1/Activities",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"{{id}}\",\r\n    \"title\":\"{{title}}\",\r\n    \"dueDate\":\"{{dueDate}}\",\r\n    \"completed\":\"{{completed}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEURI}}/api/v1/Activities?id=id&title=title&dueDate=dueDate&completed=completed",
+					"host": [
+						"{{BASEURI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Activities"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "id"
+						},
+						{
+							"key": "title",
+							"value": "title"
+						},
+						{
+							"key": "dueDate",
+							"value": "dueDate"
+						},
+						{
+							"key": "completed",
+							"value": "completed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASEURI}}/api/v1/Activities?id=id&title=title&dueDate=dueDate&completed=completed",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Transfer-Encoding",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"id\":\"{{id}}\",\r\n    \"title\":\"{{title}}\",\r\n    \"dueDate\":\"{{dueDate}}\",\r\n    \"completed\":\"{{completed}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEURI}}/api/v1/Activities/10?id=id&title=title&dueDate=dueDate&completed=completed",
+					"host": [
+						"{{BASEURI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Activities",
+						"10"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "id"
+						},
+						{
+							"key": "title",
+							"value": "title"
+						},
+						{
+							"key": "dueDate",
+							"value": "dueDate"
+						},
+						{
+							"key": "completed",
+							"value": "completed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{BASEURI}}/api/v1/Activities/29",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASEURI}}/api/v1/Activities/29",
+					"host": [
+						"{{BASEURI}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Activities",
+						"29"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{BaseURI}}/api/v1/Activities/10",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Successful POST request\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://fakerestapi.azurewebsites.net//api/v1/Activities/6/",
+					"protocol": "https",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"",
+						"api",
+						"v1",
+						"Activities",
+						"6",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
